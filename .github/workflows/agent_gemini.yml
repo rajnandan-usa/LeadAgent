@@ -1,9 +1,9 @@
-name: 🤖 Rajnandan AI Agent (Gemini)
+﻿name: Rajnandan AI Agent Gemini
 
 on:
   schedule:
-    - cron: '30 4 * * 1-5'  # Roz Mon-Fri, 10:00 AM IST
-  workflow_dispatch:         # Manual trigger bhi
+    - cron: '30 4 * * 1-5'
+  workflow_dispatch:
 
 jobs:
   run-agent:
@@ -24,10 +24,10 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
-          EMAIL_HOST:     ${{ secrets.EMAIL_HOST }}
-          EMAIL_PORT:     ${{ secrets.EMAIL_PORT }}
-          EMAIL_USER:     ${{ secrets.EMAIL_USER }}
-          EMAIL_PASS:     ${{ secrets.EMAIL_PASS }}
+          EMAIL_HOST: ${{ secrets.EMAIL_HOST }}
+          EMAIL_PORT: ${{ secrets.EMAIL_PORT }}
+          EMAIL_USER: ${{ secrets.EMAIL_USER }}
+          EMAIL_PASS: ${{ secrets.EMAIL_PASS }}
         run: python agent_gemini.py run
 
       - name: Upload Excel Report
